@@ -1,3 +1,6 @@
+const mongoose = require('mongoose');
+csont Store = mongoose.model('Store');
+
 exports.homePage = (req, res) => {
   res.render('index');
 }
