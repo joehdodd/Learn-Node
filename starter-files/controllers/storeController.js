@@ -22,6 +22,7 @@ exports.editStore = async (req, res) => {
   res.render('editStore', { title: 'Edit Store', store })
 }
 exports.updateStore = async (req, res) => {
+  req.body.location.type = 'Point';
   const store = await Store.findOneAndUpdate({ _id: req.params.id }, req.body, {
     new: true, // return the new store, instead of old
     runValidators: true //
